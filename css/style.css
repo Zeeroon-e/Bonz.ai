@@ -1,0 +1,428 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Header*/
+.header{
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    position: fixed;
+    box-shadow: 1px 1px 4px ;
+}
+.header ul{
+    list-style: none;
+    overflow: hidden;
+}
+
+.header ul a{
+    display: block;
+    padding: 20px;
+    border-right: 1px solid #aaa;
+    text-decoration: none;
+    color: rgb(20, 20, 20);
+    font-size: 20px;
+}
+.header ul a:hover{
+    background-color: rgb(219, 219, 219);
+}
+.header .logo{
+    float: left;
+    display: block;
+    max-width: 15rem;
+    padding: 10px 20px;
+}
+
+.header .menu{
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon{
+    padding: 33px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon{
+    background: rgb(58, 58, 58);
+    display: block;
+    height: 3px;
+    width: 25px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+    background: rgb(58, 58, 58);
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition:all .2s ease-out;
+    top: 8px;
+}
+
+.header .menu-icon .nav-icon:after{
+    background: rgb(58, 58, 58);
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition:all .2s ease-out;
+    top: -8px;
+}
+
+.header .menu-btn{
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 250px;
+}
+
+.header .menu-btn:checked ~ .menu-icon  .nav-icon{
+    background: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon  .nav-icon:before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+.header .menu-btn:checked ~ .menu-icon  .nav-icon:after{
+    transform: rotate( 45deg);
+    top: 0;
+}
+/* nav from phone to higher resolution*/
+@media (min-width: 48em){
+    .header li{
+        float: left;
+    }
+    .header li a{
+        padding: 25px 30px;
+    }
+    .header .menu{
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon{
+        display: none;
+    }
+}
+
+/*css for home page*/
+/*background image for home page*/
+.home-bg{
+    background: url(/images/photos/09-day.jpg) no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40vh;
+    
+}
+
+.welcome h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.466);
+    color: white;
+    font-size: 2.5em;
+    border-radius: 10px;
+    margin: 2rem;
+    width: 50rem;
+    height: 15rem;
+    padding: 2rem;
+}
+
+/*css for about page*/
+
+.about-bg{
+    background: url(/images/photos/09-day.jpg) no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+/*grid for the cards*/
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-column-gap: 0px;
+    color: rgb(218, 216, 216);
+    grid-row-gap: 0;
+    padding-top: 20vh;
+    grid-template-areas: 
+    ". photo1 photo1 photo1 photo1 photo1 photo1 photo1 photo1 ."
+    ". photo1 photo1 photo1 photo1 photo1 photo1 photo1 photo1 ."
+    ". text1 text1 text1 text1 text1 text1 text1 text1 ."
+    ". text1 text1 text1 text1 text1 text1 text1 text1 ."
+    ". photo2 photo2 photo2 photo2 photo2 photo2 photo2 photo2 ."
+    ". photo2 photo2 photo2 photo2 photo2 photo2 photo2 photo2 ."
+    ". text2 text2 text2 text2 text2 text2 text2 text2 ."
+    ". text2 text2 text2 text2 text2 text2 text2 text2 ."
+    ". photo3 photo3 photo3 photo3 photo3 photo3 photo3 photo3 ."
+    ". photo3 photo3 photo3 photo3 photo3 photo3 photo3 photo3 ."
+    ". text3 text3 text3 text3 text3 text3 text3 text3 ."
+    ". text3 text3 text3 text3 text3 text3 text3 text3 ."; 
+}
+
+.photo1{ 
+    grid-area: photo1; 
+    height: 20vh;
+    background: url('/images/photos/04-night.jpg') center center;
+    background-size: cover;
+}
+.text1{ 
+    grid-area: text1; 
+    background-color: rgba(3, 3, 3, 0.89);
+    margin-bottom: 20px;
+    border-radius: 0px 0px 10px 10px;
+}
+.text1 h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+.text1 ul{
+    margin: 10px 0px 0px 35px;
+}
+.photo2{ 
+    grid-area: photo2;
+    height: 20vh;
+    background: url('/images/photos/08-day.jpg') center center;
+    background-size: cover;
+    
+
+}
+.text2{ 
+    grid-area: text2;
+    background-color: rgba(3, 3, 3, 0.89);
+    margin-bottom: 20px;
+    border-radius: 0px 0px 10px 10px;
+}
+.text2 h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+.text2 ul{
+    margin: 10px 0px 0px 35px;
+}
+.photo3{ 
+    grid-area: photo3;
+    height: 20vh;
+    background: url('/images/photos/09-night.jpg') center center;
+    background-size: cover;
+}
+.text3{ 
+    grid-area: text3; 
+    background-color: rgba(3, 3, 3, 0.89);
+    margin-bottom: 20px;
+    border-radius: 0px 0px 10px 10px;
+}
+.text3 h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+.text3 ul{
+    margin: 10px 0px 0px 35px;
+}
+/*grid from phone to higher resolution*/
+@media (min-width: 48em){
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        grid-column-gap: 0px;
+        color: rgb(218, 216, 216);
+        grid-row-gap: 20px;
+        padding-top: 20vh;
+        grid-template-areas: 
+        ". photo1 photo1 photo1 photo1 text1 text1 text1 text1 ."
+        ". photo1 photo1 photo1 photo1 text1 text1 text1 text1 ."
+        ". photo2 photo2 photo2 photo2 text2 text2 text2 text2 ."
+        ". photo2 photo2 photo2 photo2 text2 text2 text2 text2 ."
+        ". photo3 photo3 photo3 photo3 text3 text3 text3 text3 ."
+        ". photo3 photo3 photo3 photo3 text3 text3 text3 text3 ."; 
+    }
+    .text2{ 
+        grid-area: text2;
+        margin-bottom: 00px;
+        border-radius: 0px 10px 10px 0px;
+    }
+    .text3{ 
+        grid-area: text3; 
+        margin-bottom: 0px;
+        border-radius: 0px 10px 10px 0px;
+    }
+    .text1{ 
+        grid-area: text1; 
+        margin-bottom: 0px;
+        border-radius: 0px 10px 10px 0px;
+    }
+}
+/*ccs for google maps inside the about page*/
+.google__maps{
+    background-color: #ECEEF0 ;
+}
+.google__maps-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 100vw;
+    background-color: #142f43;
+    color: azure;
+}
+.google__maps-img{
+    background: url('/images/photos/maps.svg') center center;
+    background-size: cover;
+    height: 50vh;
+    width: 100vw;
+}
+/*form grid for booking page*/
+.form-group{
+    height: 100vh;
+    background-color: rgb(16, 62, 105);
+}
+.form-header{
+    color: white;
+    padding-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-grid {
+    display: grid; 
+    padding-top: 2.5vh;
+    grid-auto-columns: 1fr; 
+    grid-auto-rows: 1fr; 
+    grid-template-columns: repeat(10, 1fr); 
+    grid-template-rows: repeat(6, 1fr); 
+    gap: 0px; 
+    grid-template-areas: 
+      ". arrive arrive arrive arrive arrive arrive arrive arrive ."
+      ". depart depart depart depart depart depart depart depart ."
+      ". people people people people people people people people ."
+      ". room room room room room room room room ."
+      ". submit submit submit submit submit submit submit submit ."
+      ". . . . . . . . . ."; 
+  }
+.arrive {
+    grid-area: arrive; 
+    height: 10vh;
+    width: 80vw;
+    background-color: rgba(24, 34, 65, 0.068);
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.arrive-label{
+    color: rgb(255, 255, 255);
+    padding-right: 1rem;
+}
+
+.arrive-input{
+    height: 5vh;
+    width: 15rem;
+}
+.depart {
+    grid-area: depart;
+    height: 10vh;
+    width: 80vw;
+    background-color: rgba(24, 34, 65, 0.068);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.depart-label{
+    color: rgb(255, 255, 255);
+    padding-right: 1rem;
+}
+.depart-input{
+    height: 5vh;
+    width: 15rem;
+}
+.people {
+    grid-area: people;
+    height: 10vh;
+    width: 80vw;
+    background-color: rgba(24, 34, 65, 0.068);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.people-label{
+    color: rgb(255, 255, 255);
+    padding-right: 1rem;
+}
+.room {
+    grid-area: room;
+    height: 10vh;
+    width: 80vw;
+    background-color: rgba(24, 34, 65, 0.068);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.room-label{
+    color: rgb(255, 255, 255);
+    padding-right: 1rem;
+}
+.room-input{
+    height: 5vh;
+    width: 15rem;
+}
+.submit {
+    grid-area: submit;
+    height: 10vh;
+    width: 80vw;
+    background-color: rgba(24, 34, 65, 0.068);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.submit-button{
+    height: 5vh;
+    width: 100px;
+}
+.submit-button:hover{
+    background-color: rgb(74, 138, 11);
+    color: cornsilk;
+    height: 6vh;
+    width: 150px;
+    font-size: 20px;
+}

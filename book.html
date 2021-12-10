@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <header class="header">
+          <img class="logo" src="images/photos/bonz.ai-logo-black_landscape.svg" alt="logo">
+          <input  class="menu-btn" type="checkbox" id="menu-btn">
+          <label for="menu-btn" class="menu-icon"> <span class="nav-icon"></span></label>
+
+          <ul class="menu">
+            <li><a id="current-page" href="/home.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/book.html">Book</a></li>
+          </ul>
+    </header>
+    <form action=".">
+      <div class="form-group">
+        <div class="form-header">
+          <h2>book now</h2>
+        </div>
+          
+        <div class="form-grid">
+        
+            <div class="arrive">
+              <label class="arrive-label">Arrive:</label>
+              <input type="datetime-local" id="arrive-input" class="arrive-input" value="2018-06-12T19:30">
+              
+            </div>
+            <div class="depart">
+              <label class="depart-label">Depart:</label>
+              <input type="datetime-local" id="depart-input" class="depart-input"  value="2018-07-03T19:30">
+        
+            </div>
+            <div class="people">
+              <label class="people-label">People:</label>
+              <input type="number" id="people-input" class="depart-input" placeholder="1, 2, 3" />
+            </div>
+            <div class="room">
+              <label class="room-label">Rooms:</label>
+              <input type="number" id="room-input" class="room-input" placeholder="1, 2, 3" />
+            </div>
+            <div class="submit">
+              <button class="submit-button" type="button">Submit</button>
+            </div>
+          
+        </div>
+      </div>
+    </form>
+
+
+</body>
+</html>
